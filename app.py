@@ -4,6 +4,7 @@ import lxml
 from html import unescape
  
 app = Flask(__name__)
+<<<<<<< HEAD
  
 @app.route('/api/v1/extract', methods=['POST'])
 def extract_html():
@@ -31,3 +32,16 @@ def extract_article_html(url):
         tag.attrib.pop('class')
  
     return lxml.html.tostring(html).decode('utf-8')
+=======
+
+
+@app.route('/')
+def index():
+    """Return homepage."""
+    json_data = {'Hey world': '2!'}
+    return jsonify(json_data)
+
+
+if __name__ == '__main__':
+    app.run()
+>>>>>>> 65d3e0f99d8ffbb488eac628fabf30e46d7c88e6
